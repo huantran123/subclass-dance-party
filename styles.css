@@ -25,3 +25,24 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+/* The animation code */
+@keyframes example {
+  0%   {border:10px solid yellow;}
+  25%  {border:10px solid green;}
+  50%  {border:10px solid blue;}
+  75%  {border:10px solid green;}
+  100% {border:10px solid yellow;}
+}
+
+.yellow{
+  border:10px solid yellow;
+  border-radius:10px;
+  position:absolute;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+
+
