@@ -1,12 +1,12 @@
 
-var growingDancer = function(top, left, timeBetweenSteps) {
+var makeGrowingDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('growing');
 };
 
-growingDancer.prototype = Object.create(makeDancer.prototype);
-growingDancer.prototype.constructor = growingDancer;
+makeGrowingDancer.prototype = Object.create(makeDancer.prototype);
+makeGrowingDancer.prototype.constructor = growimakeGrowingDancergDancer;
 
-growingDancer.prototype.step = function() {
+makeGrowingDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 };
