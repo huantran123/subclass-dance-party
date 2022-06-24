@@ -10,3 +10,7 @@ makeGrowingDancer.prototype.constructor = growimakeGrowingDancergDancer;
 makeGrowingDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 };
+
+makeGrowingDancer.prototype.lineUp = function(top, left) {
+  this.setPosition(top, left);
+};

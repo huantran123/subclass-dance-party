@@ -14,3 +14,6 @@ makeRotatingDancer.prototype.step = function() {
 };
 
 
+makeRotatingDancer.prototype.lineUp = function(top, left) {
+  this.setPosition(top, left);
+};
