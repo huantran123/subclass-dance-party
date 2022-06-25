@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
 body, html{
   height:100%;
 }
@@ -5,14 +7,17 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  font-family: 'Lato', sans-serif;
   background: url(https://www.danceinnovationsinc.com/images/background-di.jpg) no-repeat center center/cover;
+  overflow: hidden;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: rgb(62, 187, 219);
 }
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+  color: orange;
 }
 .topbar{
   height:32px;
@@ -27,8 +32,31 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.addDancerButton {
+  font-size: 20px;
+}
+
 .dancer:hover {
   cursor: pointer;
+}
+
+.line-up {
+  text-decoration: none;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+}
+
+.line-up:hover {
+  background-color: rgb(200, 239, 255);
+}
+
+.line-up a {
+  color: rgb(7, 36, 129);
+  font-weight: 400;
 }
 
 /* The animation code */
@@ -63,11 +91,11 @@ body, a:link, a:visited, a:active{
 }
 
 @keyframes growing {
-  0%   {height:200px; width:200px}
-  25%  {height:300px; width:300px}
+  0%   {height:100px; width:100px}
+  25%  {height:150px; width:150px}
   50%  {height:200px; width:200px}
   75%  {height:150px; width:150px}
-  100% {height:200px; width:200px}
+  100% {height:100px; width:100px}
 }
 
 .blinky {
