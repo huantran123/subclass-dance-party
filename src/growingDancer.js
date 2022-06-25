@@ -5,7 +5,7 @@ var makeGrowingDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeGrowingDancer.prototype = Object.create(makeDancer.prototype);
-makeGrowingDancer.prototype.constructor = growimakeGrowingDancergDancer;
+makeGrowingDancer.prototype.constructor = makeGrowingDancer;
 
 makeGrowingDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
