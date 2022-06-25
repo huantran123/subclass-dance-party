@@ -27,4 +27,16 @@ describe('rotatingDancer', function() {
       expect(rotatingDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  describe('line-up', function() {
+    it('should include line-up function', function() {
+      expect(typeof rotatingDancer.lineUp).to.be.equal('function');
+    });
+  });
+
+  describe('classes', function() {
+    it('$node should have the rotating class', function() {
+      expect(rotatingDancer.$node.hasClass('rotateDancer')).to.be.equal(true);
+    });
+  });
 });

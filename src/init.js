@@ -53,34 +53,41 @@ $(document).ready(function() {
   });
 
 
-  // Click on the dancer
-  //iterate over window.dancers.length
-  //get the position (top, left)
   //for each dancer, calculate the distance with the selected dance (top1-top2)^2 + (left1-left2)^2
-  //find the shortest distance except 0 {person1:20, person2:50, person3:5 etc...}
-  //find the target dancer {person3:5}
-  //switch position of each other, set position for selected and target
   var getDistance = function(top1, left1, top2, left2) {
     var topDiff = Math.abs(top1 - top2);
     var leftDiff = Math.abs(left1 - left2);
     return Math.sqrt(Math.pow(topDiff, 2) + Math.pow(leftDiff, 2));
   };
 
+  // Click on the dancer
   $('body').on('click', '.dancer', function() {
+
+    //get the position (top, left)
     var selectedTop = Math.floor($(this).position().top);
     var selectedLeft = Math.floor($(this).position().left);
 
     var closestDistance = {};
     var targetDancer = null;
 
+    //iterate over window.dancers.length
+    //find the target dancer
     for (var i = 0; i < window.dancers.length; i++) {
+
+      //get the position (top, left)
       var currentTop = Math.floor(window.dancers[i].top);
       var currentLeft = Math.floor(window.dancers[i].left);
+      //this can avoid switching between same dancer
       if (selectedTop === currentTop && selectedLeft === currentLeft) {
         targetDancer = window.dancers[i];
+        // Skip the rest, move on to next dancer
         continue;
       }
+
+      // Get the distance between selected dancer and the current dancer
       var currentDistance = getDistance(selectedTop, selectedLeft, currentTop, currentLeft);
+
+      //find the shortest distance between targeted dancer with dancers around
       if (closestDistance['distance'] === undefined) {
         closestDistance['distance'] = currentDistance;
         closestDistance['dancer'] = window.dancers[i];
@@ -90,6 +97,7 @@ $(document).ready(function() {
       }
     }
 
+    //switch position of each other, set position for selected and target
     var targetTop = targetDancer.top; //for getting the real location
     var targetLeft = targetDancer.left;
     var closestTop = closestDistance['dancer'].top;
@@ -97,7 +105,5 @@ $(document).ready(function() {
     targetDancer.setPosition(closestTop, closestLeft);
     closestDistance['dancer'].setPosition(targetTop, targetLeft);
   });
-
-
 
 });

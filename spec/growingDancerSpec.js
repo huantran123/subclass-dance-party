@@ -27,4 +27,16 @@ describe('growingDancer', function() {
       expect(growingDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  describe('line-up', function() {
+    it('should include line-up function', function() {
+      expect(typeof growingDancer.lineUp).to.be.equal('function');
+    });
+  });
+
+  describe('classes', function() {
+    it('$node should have the growing class', function() {
+      expect(growingDancer.$node.hasClass('growing')).to.be.equal(true);
+    });
+  });
 });

@@ -31,4 +31,16 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  describe('line-up', function() {
+    it('should include line-up function', function() {
+      expect(typeof blinkyDancer.lineUp).to.be.equal('function');
+    });
+  });
+
+  describe('classes', function() {
+    it('$node should have the blinky class', function() {
+      expect( blinkyDancer.$node.hasClass('blinky')).to.be.equal(true);
+    });
+  });
 });
